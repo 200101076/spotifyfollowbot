@@ -82,6 +82,8 @@ class spotify:
     def follow(self):
         if "/user/" in self.profile:
             self.profile = self.profile.split("/user/")[1]
+        if "/artist/" in self.profile:
+            self.profile = self.profile.split("/artist/")[1]    
         if "?" in self.profile:
             self.profile = self.profile.split("?")[0]
         login_token = self.register_account()
